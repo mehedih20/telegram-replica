@@ -9,5 +9,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  /* color: #707579cc; */
+  /* color: #3390ec; */
 }
+
+.color-blue {
+  color: #3390ec;
+}
+
+.bg-color-blue {
+  background-color: #3390ec;
+}
+/* 
+.bg-color-blue {
+  background-color: ;
+} */

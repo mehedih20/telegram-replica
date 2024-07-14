@@ -5,5 +5,18 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".hide-scrollbar": {
+          "overflow-y": "scroll",
+          "scrollbar-width": "none" /* Firefox */,
+          "-ms-overflow-style": "none" /* Internet Explorer 10+ */,
+        },
+        ".hide-scrollbar::-webkit-scrollbar": {
+          display: "none" /* WebKit browsers */,
+        },
+      });
+    },
+  ],
 };

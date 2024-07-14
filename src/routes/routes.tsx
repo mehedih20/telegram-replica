@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import SingleChat from "../components/ui/SingleChat/SingleChat";
+import SingleChat from "../components/ui/SingleOpenChat/SingleOpenChat";
 
 const router = createBrowserRouter([
   {
