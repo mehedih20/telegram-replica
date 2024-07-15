@@ -26,7 +26,7 @@ const SingleOpenChat = () => {
   }, [chatData]);
 
   return (
-    <div className="flex-1 h-svh flex flex-col bg-slate-200 dark:bg-[url('/chat-dark-bg.png')] bg-[url('/chat-light-bg.png')] bg-cover bg-center">
+    <div className="flex-1 h-svh flex flex-col dark:bg-[url('/chat-dark-bg.webp')] bg-[url('/chat-light-bg.webp')] bg-cover bg-center">
       {chatId && (
         <>
           <OpenChatHeader />
@@ -39,7 +39,7 @@ const SingleOpenChat = () => {
           ) : (
             <div
               ref={scrollContainerRef}
-              className="flex-1 max-w-[696px] mx-auto mb-3 px-4 flex flex-col overflow-y-scroll hide-scrollbar"
+              className="flex-1 max-w-[696px] mx-auto mb-3 px-4 overflow-y-scroll hide-scrollbar"
             >
               {chatData?.data?.map((chat: any) => {
                 const { id, sender_id, message, created_at } = chat;

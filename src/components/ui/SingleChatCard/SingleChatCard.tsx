@@ -5,6 +5,7 @@ import { getNameInitials } from "../../../utils/getNameInitials";
 import { truncateMessage } from "../../../utils/truncateMessage";
 import { getFormattedTime } from "../../../utils/getFormattedTime";
 import { getAvatarClassName } from "../../../utils/getAvatarClassName";
+import { useWindowWidth } from "../../../utils/hooks/useWindowWidth";
 
 type TProps = {
   item: any;
@@ -13,6 +14,7 @@ type TProps = {
 };
 
 const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
+  const windowWidth = useWindowWidth();
   const { data: chatDetails } = useGetSingleChatQuery(item?.id);
   const lastMessage: string =
     chatDetails && truncateMessage(chatDetails?.data[0]?.message);
@@ -24,14 +26,17 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
     ? getAvatarClassName(getNameInitials(creator?.name))
     : getAvatarClassName("U");
 
+  const linkAddress =
+    windowWidth < 850 ? `/m/chat/${item?.id}` : `/chat/${item?.id}`;
+
   return (
     <Link
       onClick={() => handleSelectedChat(item?.id, creator?.name)}
-      to={`/chat/${item?.id}`}
+      to={linkAddress}
     >
       <div
         key={item?.id}
-        className={`relative p-[9px] mb-3 flex items-center rounded-xl
+        className={`relative sm:p-[2px] md:p-[9px] mb-6 md:mb-3 flex items-center rounded-xl
             ${
               selectedChat !== item?.id &&
               "hover:bg-gray-200/50 dark:hover:bg-gray-700/30 transition-colors duration-300 ease-in-out"

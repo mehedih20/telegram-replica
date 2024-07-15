@@ -20,9 +20,9 @@ const WebLayout = () => {
     <div
       className={`${
         isNightMode && "dark"
-      } flex fixed h-screen top-0 left-0 w-full dark:bg-color-dark`}
+      } flex fixed h-svh top-0 left-0 w-full dark:bg-color-dark`}
     >
-      <div className="w-[480px] h-full relative group">
+      <div className="w-[480px] h-svh flex flex-col relative group">
         <div className="h-14 pt-[6px] pb-[8px] px-[13px] w-full flex items-center relative">
           <button
             onClick={toggleMenu}

@@ -1,12 +1,11 @@
+import MobileLayout from "./components/layout/MobileLayout";
 import WebLayout from "./components/layout/WebLayout";
-import Providers from "./lib/Providers/Providers";
+import { useWindowWidth } from "./utils/hooks/useWindowWidth";
 
 function App() {
-  return (
-    <Providers>
-      <WebLayout />
-    </Providers>
-  );
+  const windowWidth = useWindowWidth();
+
+  return <>{windowWidth > 850 ? <WebLayout /> : <MobileLayout />}</>;
 }
 
 export default App;

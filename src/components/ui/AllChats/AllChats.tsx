@@ -26,8 +26,14 @@ const AllChats = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    return () => {
+      setChatData([]);
+    };
+  }, []);
+
   return (
-    <div className="py-[8px] pl-[7px] pr-[10px] overflow-y-scroll hide-scrollbar flex flex-col h-[90vh] relative">
+    <div className="py-[8px] pl-[7px] pr-[10px] overflow-y-scroll hide-scrollbar flex flex-col flex-1 relative dark:bg-color-dark">
       {chatData?.map((item: any) => (
         <SingleChatCard
           key={item.id}
@@ -37,13 +43,13 @@ const AllChats = () => {
         />
       ))}
       {chatData?.length !== 0 && (
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-7">
           <button
             onClick={() => setPage(page + 1)}
-            className="mt-5 px-3 py-2 bg-gray-200/50 rounded-xl"
+            className="px-3 py-2 bg-gray-200/50 dark:bg-[#31435a] rounded-xl"
           >
             {isFetching ? (
-              <span className="animate-spin inline-block">
+              <span className="animate-spin text-sm inline-block">
                 <ImSpinner2 />
               </span>
             ) : (

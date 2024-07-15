@@ -5,11 +5,11 @@ import MessageSvg from "../AllSvgs/MessageSvg";
 import { useAppSelector } from "../../../redux/hooks";
 import { getNightModeStatus } from "../../../redux/features/chats/chatsSlice";
 
-const OpenChatInput = () => {
+const MobileChatInput = () => {
   const isDarkModeActive = useAppSelector(getNightModeStatus);
 
   return (
-    <div className="w-full mt-auto mb-[10px] lg:mb-[20px] px-2">
+    <div className="w-full mt-auto dark:bg-color-dark">
       <div className="max-w-[696px] flex items-center mx-auto h-14 gap-[8px]">
         <div className="relative h-full w-full xl:w-[632px]  rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl flex dark:bg-color-dark bg-white">
           <button className="h-14 w-8 ml-3 mr-2 rounded-full dark:bg-color-dark bg-white flex justify-center items-center">
@@ -35,4 +35,4 @@ const OpenChatInput = () => {
   );
 };
 
-export default OpenChatInput;
+export default MobileChatInput;

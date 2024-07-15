@@ -13,6 +13,7 @@ export default {
         "color-blue": "#3390ec",
         "color-dark": "#212121",
         "color-purple": "#766ac8",
+        "mobile-primary": "#517DA2",
       },
     },
   },

@@ -3,11 +3,13 @@ import { RootState } from "../../store";
 type TChat = {
   chatName: string;
   isNightModeEnabled: boolean;
+  chatId: string;
 };
 
 const initialState: TChat = {
   chatName: "",
   isNightModeEnabled: false,
+  chatId: "",
 };
 
 const chatsSlice = createSlice({
