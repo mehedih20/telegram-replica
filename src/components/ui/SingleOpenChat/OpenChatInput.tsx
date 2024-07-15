@@ -4,8 +4,11 @@ import { RiMicLine } from "react-icons/ri";
 import MessageSvg from "../AllSvgs/MessageSvg";
 import { useAppSelector } from "../../../redux/hooks";
 import { getNightModeStatus } from "../../../redux/features/chats/chatsSlice";
+import { useState } from "react";
+import { IoSend } from "react-icons/io5";
 
 const OpenChatInput = () => {
+  const [newChat, setNewChat] = useState("");
   const isDarkModeActive = useAppSelector(getNightModeStatus);
 
   return (
@@ -17,6 +20,7 @@ const OpenChatInput = () => {
           </button>
           <input
             type="text"
+            onChange={(e) => setNewChat(e.target.value)}
             className="flex-1 mr-8 outline-none dark:bg-color-dark dark:text-white"
             placeholder="Message"
           />
@@ -28,7 +32,11 @@ const OpenChatInput = () => {
           </div>
         </div>
         <button className="h-14 w-14 group hover:bg-[#3390ec] transition-colors duration-300 ease-in-out rounded-full dark:bg-color-dark bg-white flex justify-center items-center">
-          <RiMicLine className="text-[24px] group-hover:text-white text-[#707579cc]" />
+          {newChat ? (
+            <IoSend className="text-[24px] group-hover:text-white text-[#707579cc]" />
+          ) : (
+            <RiMicLine className="text-[24px] group-hover:text-white text-[#707579cc]" />
+          )}
         </button>
       </div>
     </div>

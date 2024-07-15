@@ -4,6 +4,7 @@ import MobileContent from "../ui/MenuContent/MobileContent";
 import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { getNightModeStatus } from "../../redux/features/chats/chatsSlice";
+import { FaPen } from "react-icons/fa";
 
 const MobileLayout = () => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const MobileLayout = () => {
       <div
         className={`${
           isSideMenuOpen && "translate-x-[1%]"
-        } transition-all duration-200 ease-in-out h-svh flex flex-col dark:bg-color-dark`}
+        } relative transition-all duration-200 ease-in-out h-svh flex flex-col dark:bg-color-dark`}
       >
         <div className={`bg-mobile-primary dark:bg-[#233040] mb-2`}>
           <div className="h-16 pt-[6px] pb-[8px] px-[8px] w-full flex items-center relative">
@@ -41,6 +42,9 @@ const MobileLayout = () => {
           </div>
         </div>
         <AllChats />
+        <button className="absolute bottom-4 right-4 h-12 w-12 rounded-full bg-color-blue dark:bg-color-purple text-white flex justify-center items-center text-xl shadow-lg transition-all duration-300 ease-out hover:bg-blue-700">
+          <FaPen />
+        </button>
       </div>
       <div
         onClick={closeSideMenu}

@@ -73,7 +73,9 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
                 >
                   <span
                     className={`${
-                      selectedChat === item?.id ? "text-white" : "text-gray-200"
+                      selectedChat === item?.id
+                        ? "text-white"
+                        : "text-gray-500 dark:text-gray-200"
                     }`}
                   >
                     You:

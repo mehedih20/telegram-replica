@@ -7,7 +7,9 @@ import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { getAppState, setAppLoaded } from "./redux/features/app/appSlice";
 
 function App() {
-  const [animationString, setAnimationString] = useState("");
+  const [animationString, setAnimationString] = useState(
+    "-translate-x-[105%] translate-y-[105%]"
+  );
   const [showAnimation, setShowAnimation] = useState(true);
   const isAppLoaded = useAppSelector(getAppState);
   const dispatch = useAppDispatch();
@@ -16,7 +18,6 @@ function App() {
   console.log(isAppLoaded);
 
   useEffect(() => {
-    setAnimationString("-translate-x-[105%] translate-y-[105%]");
     const timeOut = setTimeout(() => {
       setAnimationString("translate-x-0 translate-y-0");
     });

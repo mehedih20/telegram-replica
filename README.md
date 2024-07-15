@@ -2,7 +2,7 @@
 
 An attempt to clone the basic UI of the telegram application. The web layout is built by taking reference from Telegram Web and the responsive mobile layout from Telegram android app.
 
-- [Live Site](https://my-telegram-replica.vercel.app)
+- [Live Site](https://my-telegram.netlify.app)
 
 ## Technologies used
 
