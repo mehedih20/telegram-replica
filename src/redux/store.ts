@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
 import chatsReducer from "./features/chats/chatsSlice";
+import appReducer from "./features/app/appSlice";
 import storage from "redux-persist/lib/storage";
 import {
   persistReducer,
@@ -24,6 +25,7 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     chats: persistedChatsReducer,
+    app: appReducer,
   },
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({

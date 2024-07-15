@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Telegram clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An attempt to clone the basic UI of the telegram application. The web layout is built by taking reference from Telegram Web and the responsive mobile layout from Telegram android app.
 
-Currently, two official plugins are available:
+- [Live Site](https://my-telegram-replica.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies used
 
-## Expanding the ESLint configuration
+- ReactJs
+- Typescript
+- Tailwind CSS
+- Redux Toolkit
+- React Icons
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to run locally
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- If nodejs is not installed then first install nodejs.
+- Clone or download the project
+- Navigate to project directory in the terminal and run "npm install"
+- Once the dependencies are installed then run "npm run dev"
+- Finally, run the localhost server in chrome or any other web browser

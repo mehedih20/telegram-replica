@@ -27,6 +27,7 @@ const chatsSlice = createSlice({
 
 export const { setChatUsername, toggleNightMode } = chatsSlice.actions;
 export default chatsSlice.reducer;
+
 export const getChatUsername = (state: RootState) => state.chats.chatName;
 export const getNightModeStatus = (state: RootState) =>
   state.chats.isNightModeEnabled;

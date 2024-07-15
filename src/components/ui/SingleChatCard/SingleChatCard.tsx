@@ -5,7 +5,7 @@ import { getNameInitials } from "../../../utils/getNameInitials";
 import { truncateMessage } from "../../../utils/truncateMessage";
 import { getFormattedTime } from "../../../utils/getFormattedTime";
 import { getAvatarClassName } from "../../../utils/getAvatarClassName";
-import { useWindowWidth } from "../../../utils/hooks/useWindowWidth";
+import { useWindowWidth } from "../../../hooks/useWindowWidth";
 
 type TProps = {
   item: any;
@@ -16,10 +16,11 @@ type TProps = {
 const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
   const windowWidth = useWindowWidth();
   const { data: chatDetails } = useGetSingleChatQuery(item?.id);
+  const dataLength = chatDetails && chatDetails?.data?.length;
   const lastMessage: string =
-    chatDetails && truncateMessage(chatDetails?.data[0]?.message);
-  const lastSenderId: number = chatDetails?.data[0]?.sender_id;
-  const lastMessageTime: string = chatDetails?.data[0]?.updated_at;
+    chatDetails && truncateMessage(chatDetails?.data[dataLength - 1]?.message);
+  const lastSenderId: number = chatDetails?.data[dataLength - 1]?.sender_id;
+  const lastMessageTime: string = chatDetails?.data[dataLength - 1]?.updated_at;
   const { creator } = item;
 
   const gradient = creator?.name
@@ -68,11 +69,15 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
             {lastSenderId === 1 ? (
               <p>
                 <span
-                  className={`${
-                    selectedChat === item?.id ? "text-white" : "text-color-blue"
-                  } `}
+                  className={`${selectedChat === item?.id && "text-white"} `}
                 >
-                  You:{" "}
+                  <span
+                    className={`${
+                      selectedChat === item?.id ? "text-white" : "text-gray-200"
+                    }`}
+                  >
+                    You:
+                  </span>{" "}
                 </span>
                 {lastMessage}
               </p>
