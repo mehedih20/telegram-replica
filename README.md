@@ -4,6 +4,11 @@ An attempt to clone the basic UI of the telegram application. The web layout is 
 
 - [Live Site](https://my-telegram.netlify.app)
 
+## Highlights
+
+- Almost identical copy of the original telegram web and android app layout
+- Night mode implemented
+
 ## Technologies used
 
 - ReactJs

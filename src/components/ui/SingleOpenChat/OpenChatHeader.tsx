@@ -21,7 +21,9 @@ const OpenChatHeader = () => {
           <span className="text-lg dark:text-white font-medium -mt-1 -mb-0.5">
             {chatUsername}
           </span>
-          <span className="text-sm -mb-0.5 text-gray-300">Online</span>
+          <span className="text-sm -mb-0.5 text-gray-500 dark:text-gray-300">
+            Online
+          </span>
         </div>
       </div>
       <div className="flex items-center gap-[4px]">

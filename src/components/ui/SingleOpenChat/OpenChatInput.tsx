@@ -31,13 +31,15 @@ const OpenChatInput = () => {
             <MessageSvg color={`${isDarkModeActive ? "#212121" : "#ffffff"}`} />
           </div>
         </div>
-        <button className="h-14 w-14 group hover:bg-[#3390ec] transition-colors duration-300 ease-in-out rounded-full dark:bg-color-dark bg-white flex justify-center items-center">
-          {newChat ? (
+        {newChat ? (
+          <button className="h-14 w-14 group hover:bg-[#3390ec] transition-colors duration-300 ease-in-out rounded-full dark:bg-color-dark bg-white flex justify-center items-center">
             <IoSend className="text-[24px] group-hover:text-white text-[#707579cc]" />
-          ) : (
+          </button>
+        ) : (
+          <button className="h-14 w-14 group hover:bg-[#3390ec] transition-colors duration-300 ease-in-out rounded-full dark:bg-color-dark bg-white flex justify-center items-center">
             <RiMicLine className="text-[24px] group-hover:text-white text-[#707579cc]" />
-          )}
-        </button>
+          </button>
+        )}
       </div>
     </div>
   );
