@@ -39,7 +39,7 @@ const SingleOpenChat = () => {
           ) : (
             <div
               ref={scrollContainerRef}
-              className="flex-1 max-w-[696px] mx-auto mb-3 px-4 overflow-y-scroll hide-scrollbar"
+              className="flex-1 w-full xl:w-[696px] mx-auto mb-3 px-4 overflow-y-scroll hide-scrollbar"
             >
               {chatData?.data?.map((chat: any) => {
                 const { id, sender_id, message, created_at } = chat;
@@ -51,7 +51,7 @@ const SingleOpenChat = () => {
                       "ml-auto bg-[#effedd] dark:bg-color-purple rounded-bl-xl"
                     } ${
                       sender_id !== 1 &&
-                      "bg-white dark:bg-color-dark rounded-br-xl"
+                      " bg-white dark:bg-color-dark rounded-br-xl"
                     } mt-[10px] px-[8px] pt-[5px] pb-[5px] rounded-tl-xl rounded-tr-xl `}
                   >
                     <p className="dark:text-white mr-6">{message}</p>
