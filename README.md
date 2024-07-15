@@ -19,7 +19,6 @@ An attempt to clone the basic UI of the telegram application. The web layout is 
 
 ## How to run locally
 
-- If nodejs is not installed then first install nodejs.
 - Clone or download the project
 - Navigate to project directory in the terminal and run "npm install"
 - Once the dependencies are installed then run "npm run dev"
