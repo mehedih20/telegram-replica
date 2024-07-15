@@ -34,8 +34,11 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
         className={`relative p-[9px] mb-3 flex items-center rounded-xl
             ${
               selectedChat !== item?.id &&
-              "hover:bg-gray-200/50 transition-colors duration-300 ease-in-out"
-            }   ${selectedChat === item?.id && "bg-color-blue text-white"}`}
+              "hover:bg-gray-200/50 dark:hover:bg-gray-700/30 transition-colors duration-300 ease-in-out"
+            }   ${
+          selectedChat === item?.id &&
+          "dark:bg-color-purple bg-color-blue text-white"
+        }`}
       >
         <h2
           className={`w-14 h-14 rounded-full mr-[8px] flex justify-center items-center text-lg font-semibold text-white ${gradient}`}
@@ -43,7 +46,7 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
           {creator?.name ? getNameInitials(creator?.name) : "U"}
         </h2>
         <div>
-          <p className="font-medium">
+          <p className="font-medium dark:text-white">
             {creator?.name
               ? creator?.name
               : creator?.phone
@@ -52,14 +55,16 @@ const SingleChatCard = ({ item, selectedChat, handleSelectedChat }: TProps) => {
           </p>
           <div
             className={`${
-              selectedChat === item?.id ? "text-white" : "text-gray-500"
+              selectedChat === item?.id
+                ? "text-white"
+                : "text-gray-500 dark:text-gray-400"
             } `}
           >
             {lastSenderId === 1 ? (
               <p>
                 <span
                   className={`${
-                    selectedChat === item?.id ? "text-white" : "color-blue"
+                    selectedChat === item?.id ? "text-white" : "text-color-blue"
                   } `}
                 >
                   You:{" "}

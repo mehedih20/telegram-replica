@@ -1,6 +1,6 @@
-const InputSvg = () => {
+const MessageSvg = ({ color }: { color: string }) => {
   return (
-    <svg className="svg-appendix" width="9" height="20">
+    <svg width="9" height="20" className="svg-appendix">
       <defs>
         <filter
           x="-50%"
@@ -8,7 +8,7 @@ const InputSvg = () => {
           width="200%"
           height="141.2%"
           filterUnits="objectBoundingBox"
-          id="composerAppendix"
+          id="messageAppendix"
         >
           <feOffset
             dy="1"
@@ -30,11 +30,11 @@ const InputSvg = () => {
         <path
           d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z"
           fill="#000"
-          filter="url(#composerAppendix)"
+          filter="url(#messageAppendix)"
         ></path>
         <path
           d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z"
-          fill="#FFF"
+          fill={color}
           className="corner"
         ></path>
       </g>
@@ -42,4 +42,4 @@ const InputSvg = () => {
   );
 };
 
-export default InputSvg;
+export default MessageSvg;

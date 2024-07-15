@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 type TChat = {
   chatName: string;
+  isNightModeEnabled: boolean;
 };
 
 const initialState: TChat = {
   chatName: "",
+  isNightModeEnabled: false,
 };
 
 const chatsSlice = createSlice({
@@ -15,12 +17,14 @@ const chatsSlice = createSlice({
     setChatUsername: (state, action) => {
       state.chatName = action.payload;
     },
-    removeChatUsername: (state) => {
-      state.chatName = "";
+    toggleNightMode: (state) => {
+      state.isNightModeEnabled = !state.isNightModeEnabled;
     },
   },
 });
 
-export const { setChatUsername, removeChatUsername } = chatsSlice.actions;
+export const { setChatUsername, toggleNightMode } = chatsSlice.actions;
 export default chatsSlice.reducer;
 export const getChatUsername = (state: RootState) => state.chats.chatName;
+export const getNightModeStatus = (state: RootState) =>
+  state.chats.isNightModeEnabled;

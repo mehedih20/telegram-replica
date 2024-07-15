@@ -73,7 +73,7 @@ export const alphabetGradients = [
   },
   {
     alphabet: "S",
-    alphaGradient: "bg-gradient-to-b from-[#b7f1f9] to-[#60cad8]",
+    alphaGradient: "bg-gradient-to-b from-[#9bdbe4] to-[#319dab]",
   },
   {
     alphabet: "T",

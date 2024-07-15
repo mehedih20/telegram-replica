@@ -3,7 +3,18 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "selector",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "color-blue": "#3390ec",
+        "color-dark": "#212121",
+        "color-purple": "#766ac8",
+      },
+      backgroundColor: {
+        "color-blue": "#3390ec",
+        "color-dark": "#212121",
+        "color-purple": "#766ac8",
+      },
+    },
   },
   plugins: [
     function ({ addUtilities }) {

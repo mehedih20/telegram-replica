@@ -12,14 +12,6 @@
   /* color: #3390ec; */
 }
 
-.color-blue {
-  color: #3390ec;
+.box-shadow {
+  box-shadow: 0 0.25rem 0.5rem 0.125rem rgb(114, 114, 114, 0.251);
 }
-
-.bg-color-blue {
-  background-color: #3390ec;
-}
-/* 
-.bg-color-blue {
-  background-color: ;
-} */

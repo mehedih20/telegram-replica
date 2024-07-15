@@ -27,7 +27,7 @@ const AllChats = () => {
   }, [data]);
 
   return (
-    <div className="py-[8px] pl-[7px] pr-[10px] overflow-y-scroll hide-scrollbar flex flex-col h-[90vh]">
+    <div className="py-[8px] pl-[7px] pr-[10px] overflow-y-scroll hide-scrollbar flex flex-col h-[90vh] relative">
       {chatData?.map((item: any) => (
         <SingleChatCard
           key={item.id}
